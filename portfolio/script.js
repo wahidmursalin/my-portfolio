@@ -121,3 +121,33 @@ window.addEventListener("DOMContentLoaded", () => {
   handleTopbarScroll();
   setActiveLink();
 });
+function sendMsg(){
+  let input = document.getElementById("userInput");
+  let msg = input.value;
+  if(!msg) return;
+
+  let messages = document.getElementById("messages");
+
+  // user message
+  messages.innerHTML += `<div class="user">You: ${msg}</div>`;
+
+  input.value = "";
+
+  // bot reply
+  setTimeout(() => {
+    messages.innerHTML += `<div class="bot">${botReply(msg)}</div>`;
+    messages.scrollTop = messages.scrollHeight;
+  }, 700);
+}
+
+function botReply(msg){
+  msg = msg.toLowerCase();
+
+  if(msg.includes("hello")) return "Hi 👋 How can I help you?";
+  if(msg.includes("portfolio")) return "Thanks for visiting my portfolio 🚀";
+  if(msg.includes("project")) return "Check my GitHub 💻";
+  if(msg.includes("contact")) return "You can email me anytime 📩";
+
+  return "I’ll get back to you soon 👍";
+}
+
