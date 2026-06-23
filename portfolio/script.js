@@ -149,50 +149,31 @@ function botReply(msg){
   return "I’ll get back to you soon 👍";
 }
 
-// =========================
-// SEND MESSAGE
-// =========================
-function sendMsg(){
-  const input = document.getElementById("userInput");
-  const messages = document.getElementById("messages");
+function botReply(msg){
+  msg = msg.toLowerCase();
 
-  if(!input || !messages) return;
+  if(msg.includes("hello")) return "Hi 👋 How can I help you?";
+  if(msg.includes("portfolio")) return "Thanks for visiting my portfolio 🚀";
+  if(msg.includes("project")) return "Check my GitHub 💻";
+  if(msg.includes("contact")) return "You can email me anytime 📩";
 
-  let msg = input.value.trim();
-  if(msg === "") return;
-
-  // USER MESSAGE
-  const userDiv = document.createElement("div");
-  userDiv.className = "user";
-  userDiv.innerText = "You: " + msg;
-  messages.appendChild(userDiv);
-
-  input.value = "";
-
-  messages.scrollTop = messages.scrollHeight;
-
-  // BOT REPLY (delay)
-  setTimeout(() => {
-    const botDiv = document.createElement("div");
-    botDiv.className = "bot";
-    botDiv.innerText = botReply(msg);
-    messages.appendChild(botDiv);
-
-    messages.scrollTop = messages.scrollHeight;
-  }, 600);
+  return "I’ll get back to you soon 👍";
 }
 
-// =========================
-// ENTER KEY SUPPORT
-// =========================
-document.addEventListener("DOMContentLoaded", () => {
-  const input = document.getElementById("userInput");
+function toggleTheme() {
+  document.body.classList.toggle("light");
 
-  if(input){
-    input.addEventListener("keydown", (e) => {
-      if(e.key === "Enter"){
-        sendMsg();
-      }
-    });
+  if(document.body.classList.contains("light")){
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.setItem("theme", "dark");
   }
-});
+}
+
+window.onload = function(){
+  if(localStorage.getItem("theme") === "light"){
+    document.body.classList.add("light");
+  }
+};
+
+
