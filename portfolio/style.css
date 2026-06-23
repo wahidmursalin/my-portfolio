@@ -889,3 +889,57 @@ img{ max-width:100%; display:block; }
   right: 20px;
   z-index: 9999;
 }
+.connect{
+    background: #dcdcdc;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.connect h2{
+    margin-bottom: 25px;
+    color: #fff;
+    background: #2d3f73;
+    padding: 20px;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.social-icons a{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 32px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.social-icons a:nth-child(1){
+    background: #0077b5;
+    color: white;
+}
+
+.social-icons a:nth-child(2){
+    background: #24292e;
+    color: white;
+}
+
+.social-icons a:nth-child(3){
+    background: #25d366;
+    color: white;
+}
+
+.social-icons a:nth-child(4){
+    background: #1877f2;
+    color: white;
+}
+
+.social-icons a:hover{
+    transform: translateY(-5px);
+}
