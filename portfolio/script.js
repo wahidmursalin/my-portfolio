@@ -121,15 +121,47 @@ window.addEventListener("DOMContentLoaded", () => {
   handleTopbarScroll();
   setActiveLink();
 });
-function sendMsg(){
-  let input = document.getElementById("userInput");
-  let msg = input.value.trim();
+// =========================
+// CHAT OPEN / CLOSE
+// =========================
+function toggleChat(){
+  const box = document.getElementById("chatBox");
+  if(!box) return;
 
+  if(box.style.display === "block"){
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
+}
+
+// =========================
+// BOT LOGIC
+// =========================
+function botReply(msg){
+  msg = msg.toLowerCase();
+
+  if(msg.includes("hello")) return "Hi 👋 How can I help you?";
+  if(msg.includes("portfolio")) return "Thanks for visiting my portfolio 🚀";
+  if(msg.includes("project")) return "Check my GitHub 💻";
+  if(msg.includes("contact")) return "You can email me anytime 📩";
+
+  return "I’ll get back to you soon 👍";
+}
+
+// =========================
+// SEND MESSAGE
+// =========================
+function sendMsg(){
+  const input = document.getElementById("userInput");
+  const messages = document.getElementById("messages");
+
+  if(!input || !messages) return;
+
+  let msg = input.value.trim();
   if(msg === "") return;
 
-  let messages = document.getElementById("messages");
-
-  // user message
+  // USER MESSAGE
   const userDiv = document.createElement("div");
   userDiv.className = "user";
   userDiv.innerText = "You: " + msg;
@@ -137,10 +169,9 @@ function sendMsg(){
 
   input.value = "";
 
-  // scroll after user message
   messages.scrollTop = messages.scrollHeight;
 
-  // bot reply
+  // BOT REPLY (delay)
   setTimeout(() => {
     const botDiv = document.createElement("div");
     botDiv.className = "bot";
@@ -148,5 +179,20 @@ function sendMsg(){
     messages.appendChild(botDiv);
 
     messages.scrollTop = messages.scrollHeight;
-  }, 700);
+  }, 600);
 }
+
+// =========================
+// ENTER KEY SUPPORT
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("userInput");
+
+  if(input){
+    input.addEventListener("keydown", (e) => {
+      if(e.key === "Enter"){
+        sendMsg();
+      }
+    });
+  }
+});
