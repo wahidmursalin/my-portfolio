@@ -123,31 +123,30 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 function sendMsg(){
   let input = document.getElementById("userInput");
-  let msg = input.value;
-  if(!msg) return;
+  let msg = input.value.trim();
+
+  if(msg === "") return;
 
   let messages = document.getElementById("messages");
 
   // user message
-  messages.innerHTML += `<div class="user">You: ${msg}</div>`;
+  const userDiv = document.createElement("div");
+  userDiv.className = "user";
+  userDiv.innerText = "You: " + msg;
+  messages.appendChild(userDiv);
 
   input.value = "";
 
+  // scroll after user message
+  messages.scrollTop = messages.scrollHeight;
+
   // bot reply
   setTimeout(() => {
-    messages.innerHTML += `<div class="bot">${botReply(msg)}</div>`;
+    const botDiv = document.createElement("div");
+    botDiv.className = "bot";
+    botDiv.innerText = botReply(msg);
+    messages.appendChild(botDiv);
+
     messages.scrollTop = messages.scrollHeight;
   }, 700);
 }
-
-function botReply(msg){
-  msg = msg.toLowerCase();
-
-  if(msg.includes("hello")) return "Hi 👋 How can I help you?";
-  if(msg.includes("portfolio")) return "Thanks for visiting my portfolio 🚀";
-  if(msg.includes("project")) return "Check my GitHub 💻";
-  if(msg.includes("contact")) return "You can email me anytime 📩";
-
-  return "I’ll get back to you soon 👍";
-}
-
