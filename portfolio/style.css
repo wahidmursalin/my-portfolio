@@ -246,36 +246,6 @@ img{ max-width:100%; display:block; }
 .btn--ghost:hover{ border-color: var(--violet); transform: translateY(-2px); }
 .btn--full{ width: 100%; }
 
-.hero__socials {
-  display: flex;
-  gap: 14px;
-  margin-top: 36px;
-}
-
-.hero__socials a {
-  width: 46px;
-  height: 46px;
-  border: 1px solid var(--border-dark);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-onDark-muted);
-  transition: border-color 0.2s, color 0.2s, transform 0.2s;
-  text-decoration: none;
-}
-
-.hero__socials a i {
-  font-size: 18px;
-  color: inherit;
-}
-
-.hero__socials a:hover {
-  border-color: var(--cyan);
-  color: var(--cyan);
-  transform: translateY(-2px);
-}
-
 .hero__photo-wrap{
   position: relative;
   display: flex;
