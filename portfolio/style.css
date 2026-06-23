@@ -156,7 +156,7 @@ img{ max-width:100%; display:block; }
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 120px 24px 80px;
+  padding: 100px 24px 80px;
 }
 
 .hero__mesh{
