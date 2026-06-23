@@ -181,15 +181,7 @@ img{ max-width:100%; display:block; }
   z-index: 0;
 }
 
-.hero__inner{
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  align-items: center;
-}
-
+.hero__inner{ position: relative; z-index: 1; max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: center; width: 100%; }
 .eyebrow{
   display: inline-block;
   font-family: var(--font-mono);
