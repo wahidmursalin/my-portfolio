@@ -1,1 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wahid Mursalin — Software Engineering Student</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- ===== NAV ===== -->
+<header class="topbar" id="topbar">
+  <div class="topbar__inner">
+    <a href="#home" class="brand">Wahid<span class="brand__dot">.</span>dev</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link is-active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#achievements" class="nav-link">Achievements</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="resume.pdf" download class="nav-cta">Resume</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== HOME / HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero__mesh" aria-hidden="true"></div>
+    <div class="hero__grid" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+      <div class="hero__text" data-reveal>
+        <span class="eyebrow">Hello, I'm</span>
+        <h1 class="hero__name">Wahid Mursalin</h1>
+        <p class="hero__role">Frontend Learner&nbsp;|&nbsp;Java Developer&nbsp;|&nbsp;MySQL Enthusiast</p>
+        <p class="hero__desc">
+          Software Engineering student at Daffodil International University, focused on
+          full-stack web development and algorithmic thinking. I enjoy turning real
+          problems into clean, working applications.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">View Projects</a>
+          <a href="#contact" class="btn btn--ghost">Contact Me</a>
+        </div>
+        <div class="hero__socials">
+          <a href="https://github.com/wahidmursalin" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+          <a href="https://www.linkedin.com/in/wahid-mursalin-690070374/" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+          <a href="mailto:wahid241-35-055@diu.edu.bd" aria-label="Email">@</a>
+        </div>
+      </div>
+
+      <div class="hero__photo-wrap" data-reveal>
+        <div class="hero__blob hero__blob--a"></div>
+        <div class="hero__blob hero__blob--b"></div>
+        <div class="hero__photo-ring">
+          <img src="profile.jpg" alt="Wahid Mursalin" class="hero__photo">
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll down">↓</a>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section section--light" id="about">
+    <div class="section__inner">
+      <div class="section__head" data-reveal>
+        <span class="eyebrow eyebrow--dark">Get to know me</span>
+        <h2 class="section__title section__title--dark">About Me</h2>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__text" data-reveal>
+          <p>
+            I'm a Software Engineering student with a strong passion for software
+            development and problem solving. Currently focusing on full-stack web
+            development and algorithmic thinking, I enjoy building practical
+            applications that solve real-world problems.
+          </p>
+          <p>
+            I'm pursuing my B.Sc. in Software Engineering at Daffodil International
+            University, where I've built a solid foundation in programming, data
+            structures, algorithms, and modern web technologies.
+          </p>
+          <p>
+            When I'm not coding, I'm exploring new technologies, reading tech blogs,
+            or taking part in programming contests. I'm actively looking for
+            internship opportunities in Software Engineering and Web Development.
+          </p>
+        </div>
+
+        <div class="stat-cards" data-reveal>
+          <div class="stat-card">
+            <span class="stat-card__num" data-count="3">0</span>
+            <span class="stat-card__plus">+</span>
+            <span class="stat-card__label">Projects Built</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__num" data-count="85">0</span>
+            <span class="stat-card__plus">+</span>
+            <span class="stat-card__label">LeetCode Solved</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__num stat-card__num--static">3.78</span>
+            <span class="stat-card__label">CGPA / 4.00</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__num stat-card__num--static">3rd</span>
+            <span class="stat-card__label">Year, SWE @ DIU</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS / TECH STACK ===== -->
+  <section class="section section--dark" id="skills">
+    <div class="section__inner">
+      <div class="section__head" data-reveal>
+        <span class="eyebrow">What I work with</span>
+        <h2 class="section__title">Tech Stack</h2>
+        <p class="section__sub">Hover to pause &middot; tools and languages I reach for most</p>
+      </div>
+    </div>
+
+    <div class="marquee" data-reveal>
+      <div class="marquee__track marquee__track--left">
+        <span class="chip">JavaScript (ES6+)</span><span class="chip">React.js</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Java</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Git &amp; GitHub</span><span class="chip">VS Code</span><span class="chip">Postman</span><span class="chip">Linux CLI</span><span class="chip">Vercel / Netlify</span>
+        <span class="chip">JavaScript (ES6+)</span><span class="chip">React.js</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Java</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Git &amp; GitHub</span><span class="chip">VS Code</span><span class="chip">Postman</span><span class="chip">Linux CLI</span><span class="chip">Vercel / Netlify</span>
+      </div>
+    </div>
+
+    <div class="marquee" data-reveal>
+      <div class="marquee__track marquee__track--right">
+        <span class="chip chip--alt">C++</span><span class="chip chip--alt">Python</span><span class="chip chip--alt">SQL</span><span class="chip chip--alt">OOP</span><span class="chip chip--alt">Data Structures</span><span class="chip chip--alt">Algorithms</span><span class="chip chip--alt">Problem Solving</span><span class="chip chip--alt">Competitive Programming</span>
+        <span class="chip chip--alt">C++</span><span class="chip chip--alt">Python</span><span class="chip chip--alt">SQL</span><span class="chip chip--alt">OOP</span><span class="chip chip--alt">Data Structures</span><span class="chip chip--alt">Algorithms</span><span class="chip chip--alt">Problem Solving</span><span class="chip chip--alt">Competitive Programming</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section section--light" id="projects">
+    <div class="section__inner">
+      <div class="section__head" data-reveal>
+        <span class="eyebrow eyebrow--dark">Featured work</span>
+        <h2 class="section__title section__title--dark">Projects</h2>
+      </div>
+
+      <div class="projects__grid" data-reveal>
+
+        <article class="proj-card">
+          <div class="proj-card__bar"></div>
+          <h3 class="proj-card__title">Student Management System</h3>
+          <p class="proj-card__desc">
+            A comprehensive Java desktop application for managing student records,
+            academic results, and departmental information — with add, update,
+            delete, and search functionality for admins.
+          </p>
+          <div class="proj-card__tags">
+            <span>Java</span><span>Java Swing</span><span>MySQL</span>
+          </div>
+          <a href="https://github.com/wahidmursalin" target="_blank" rel="noopener" class="proj-card__link">View Code →</a>
+        </article>
+
+        <article class="proj-card">
+          <div class="proj-card__bar"></div>
+          <h3 class="proj-card__title">Library Management System</h3>
+          <p class="proj-card__desc">
+            A Java + MySQL application for managing library operations — book
+            inventory, issue/return tracking, borrowing history, and fine
+            calculation.
+          </p>
+          <div class="proj-card__tags">
+            <span>Java</span><span>OOP</span><span>MySQL</span>
+          </div>
+          <a href="https://github.com/wahidmursalin" target="_blank" rel="noopener" class="proj-card__link">View Code →</a>
+        </article>
+
+        <article class="proj-card">
+          <div class="proj-card__bar"></div>
+          <h3 class="proj-card__title">Personal Portfolio Website</h3>
+          <p class="proj-card__desc">
+            A modern, responsive personal portfolio showcasing my academic journey,
+            skills, and projects — clean design with smooth navigation.
+          </p>
+          <div class="proj-card__tags">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+          </div>
+          <a href="https://github.com/wahidmursalin" target="_blank" rel="noopener" class="proj-card__link">View Code →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ACHIEVEMENTS ===== -->
+  <section class="section section--dark" id="achievements">
+    <div class="section__inner">
+      <div class="section__head" data-reveal>
+        <span class="eyebrow">Recognition</span>
+        <h2 class="section__title">Achievements &amp; Coursework</h2>
+        <p class="section__sub">Milestones from my academic journey so far</p>
+      </div>
+
+      <div class="timeline" data-reveal>
+        <div class="timeline__item">
+          <span class="timeline__dot"></span>
+          <div class="timeline__content">
+            <span class="timeline__tag">Sep 2025</span>
+            <h3>DIU BreakOut Algorithm Programming Contest</h3>
+            <p>Participated in the algorithm programming contest organized by the Dept. of Software Engineering, Daffodil International University.</p>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <span class="timeline__dot"></span>
+          <div class="timeline__content">
+            <span class="timeline__tag">Aug 2025</span>
+            <h3>Art of Living — Learning Exhibition</h3>
+            <p>Took part in the Learning Exhibition organized by Art of Living &amp; Daffodil International University.</p>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <span class="timeline__dot"></span>
+          <div class="timeline__content">
+            <span class="timeline__tag">2024</span>
+            <h3>4th Data Science Summit — Idea Poster Presentation</h3>
+            <p>Presented ideas on "AI in Education" at the Data Science Summit, organized by Daffodil International University.</p>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <span class="timeline__dot"></span>
+          <div class="timeline__content">
+            <span class="timeline__tag">Ongoing</span>
+            <h3>85+ Problems Solved on LeetCode</h3>
+            <p>Continuously practicing data structures, algorithms, and problem solving to sharpen logical thinking.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="coursework" data-reveal>
+        <h3 class="coursework__title">Relevant Coursework</h3>
+        <div class="coursework__tags">
+          <span>Data Structures &amp; Algorithms</span>
+          <span>OOP</span>
+          <span>DBMS</span>
+          <span>Web Technologies</span>
+          <span>Operating Systems</span>
+          <span>Computer Networks</span>
+          <span>Software Engineering</span>
+          <span>Discrete Mathematics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section section--light" id="contact">
+    <div class="section__inner">
+      <div class="section__head" data-reveal>
+        <span class="eyebrow eyebrow--dark">Get in touch</span>
+        <h2 class="section__title section__title--dark">Let's Connect</h2>
+        <p class="section__sub section__sub--dark">Have a project, an opportunity, or just want to talk tech? I'd love to hear from you.</p>
+      </div>
+
+      <div class="contact__grid" data-reveal>
+        <div class="contact__info">
+          <a href="mailto:wahid241-35-055@diu.edu.bd" class="contact__row">
+            <span class="contact__label">Email</span>
+            <span class="contact__value">wahid241-35-055@diu.edu.bd</span>
+          </a>
+          <a href="https://github.com/wahidmursalin" target="_blank" rel="noopener" class="contact__row">
+            <span class="contact__label">GitHub</span>
+            <span class="contact__value">github.com/wahidmursalin</span>
+          </a>
+          <a href="https://www.linkedin.com/in/wahid-mursalin-690070374/" target="_blank" rel="noopener" class="contact__row">
+            <span class="contact__label">LinkedIn</span>
+            <span class="contact__value">wahid-mursalin</span>
+          </a>
+          <div class="contact__row contact__row--static">
+            <span class="contact__label">Location</span>
+            <span class="contact__value">Daffodil International University, Dhaka</span>
+          </div>
+        </div>
+
+        <form id="contactForm" class="contact-form">
+          <label class="field">
+            <span>Your Name</span>
+            <input type="text" name="name" placeholder="Enter your name" required>
+          </label>
+          <label class="field">
+            <span>Your Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label class="field">
+            <span>Message</span>
+            <textarea name="message" rows="4" placeholder="What's on your mind?" required></textarea>
+          </label>
+          <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+          <p class="form-status" id="formStatus" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; <span id="year"></span> Wahid Mursalin. Built with HTML, CSS &amp; vanilla JS.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
