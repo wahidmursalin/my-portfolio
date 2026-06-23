@@ -889,3 +889,18 @@ img{ max-width:100%; display:block; }
   right: 20px;
   z-index: 9999;
 }
+.chat-container{
+    display: flex;
+    flex-direction: column;
+    height: 500px; /* chatbot height */
+}
+
+.chat-messages{
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chat-input{
+    margin-top: auto;
+    display: flex;
+}
