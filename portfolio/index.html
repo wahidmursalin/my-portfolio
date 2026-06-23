@@ -78,9 +78,17 @@
           <a href="#contact" class="btn btn--ghost">Contact Me</a>
         </div>
         <div class="hero__socials">
-          <a href="https://github.com/wahidmursalin" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-          <a href="https://www.linkedin.com/in/wahid-mursalin-690070374/" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
-          <a href="mailto:wahid241-35-055@diu.edu.bd" aria-label="Email">@</a>
+           <a href="https://github.com/wahidmursalin" target="_blank" rel="noopener" aria-label="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/in/wahid-mursalin-690070374/" target="_blank" rel="noopener" aria-label="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+  <a href="mailto:wahid241-35-055@diu.edu.bd" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
         </div>
       </div>
 
@@ -344,5 +352,22 @@
 </footer>
 
 <script src="script.js"></script>
+  <!-- Floating Chatbot -->
+<div class="chat-bubble" onclick="toggleChat()">
+  <i class="fas fa-comment-dots"></i>
+</div>
+
+<div class="chat-container" id="chatBox">
+<div class="chat-header">
+  <i class="fas fa-robot"></i> My Bot
+</div>
+
+  <div class="chat-messages" id="messages"></div>
+
+  <div class="chat-input">
+    <input id="userInput" type="text" placeholder="Type a message..." />
+    <button onclick="sendMsg()">Send</button>
+  </div>
+</div>
 </body>
 </html>
