@@ -860,11 +860,11 @@ img{ max-width:100%; display:block; }
     background: #2d3f73;
     padding: 20px;
 }
-
 .social-icons{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 35px;
+    margin-top: 50px;
 }
 
 .social-icons a{
