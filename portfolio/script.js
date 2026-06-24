@@ -135,59 +135,77 @@ function toggleChat(){
   }
 }
 
-// =========================
-// BOT LOGIC
-// =========================
 
-function toggleChat(){
-  let box = document.getElementById("chatBox");
-  box.style.display = (box.style.display === "flex") ? "none" : "flex";
+function toggleChat() {
+  const chatBox = document.getElementById("chatBox");
+  if (!chatBox) return;
+  chatBox.style.display = (chatBox.style.display === "none" || chatBox.style.display === "") ? "flex" : "none";
 }
 
-function sendMsg(){
-  let input = document.getElementById("userInput");
-  let msg = input.value;
-  if(!msg) return;
-
-  let messages = document.getElementById("messages");
-
-  // user message
-  messages.innerHTML += `<div class="user">You: ${msg}</div>`;
-
-  input.value = "";
-
-  // bot reply
-  setTimeout(() => {
-    messages.innerHTML += `<div class="bot">${botReply(msg)}</div>`;
-    messages.scrollTop = messages.scrollHeight;
-  }, 700);
-}
-
-function botReply(msg){
-  msg = msg.toLowerCase();
-
-  if(msg.includes("hello")) return "Hi 👋 How can I help you?";
-  if(msg.includes("portfolio")) return "Thanks for visiting my portfolio 🚀";
-  if(msg.includes("project")) return "Check my GitHub 💻";
-  if(msg.includes("contact")) return "You can email me anytime 📩";
-
-  return "I’ll get back to you soon 👍";
-}
-
-function toggleTheme() {
-  document.body.classList.toggle("light");
-
-  if(document.body.classList.contains("light")){
-    localStorage.setItem("theme", "light");
-  } else {
-    localStorage.setItem("theme", "dark");
+function handleKeyPress(event) {
+  if (event.key === "Enter") {
+    sendMsg();
   }
 }
 
-window.onload = function(){
-  if(localStorage.getItem("theme") === "light"){
-    document.body.classList.add("light");
-  }
-};
+async function sendMsg() {
+  const inputField = document.getElementById("userInput");
+  const messageText = inputField.value.trim();
+  if (!messageText) return;
 
+  // ইউজারের মেসেজ স্ক্রিনে দেখানো
+  appendMessage(messageText, "user-message");
+  inputField.value = "";
+
+  // বটের থিংকিং স্টেট তৈরি করা
+  const thinkingId = appendMessage("Thinking...", "bot-message");
+
+  try {
+    // আমাদের লোকাল নোড সার্ভারে (server.js) রিকোয়েস্ট পাঠানো হচ্ছে
+    const response = await fetch(BACKEND_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: messageText // আমাদের server.js এই 'message' কি-টি এক্সপেক্ট করে
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    
+    // server.js থেকে রিটার্ন করা 'reply' স্ক্রিনে দেখানো হচ্ছে
+    if (data.reply) {
+      document.getElementById(thinkingId).innerText = data.reply;
+    } else if (data.error) {
+      document.getElementById(thinkingId).innerText = "Error: " + data.error;
+    } else {
+      document.getElementById(thinkingId).innerText = "No response received from Server.";
+    }
+
+  } catch (error) {
+    console.error("Error Details:", error);
+    document.getElementById(thinkingId).innerText = "Error: " + error.message;
+  }
+}
+
+// চ্যাটে মেসেজ অ্যাপেন্ড করার ফাংশন
+function appendMessage(text, className) {
+  const messageContainer = document.getElementById("messages");
+  const messageDiv = document.createElement("div");
+  const messageId = "msg-" + Date.now();
+  
+  messageDiv.id = messageId;
+  messageDiv.className = `message ${className}`;
+  messageDiv.innerText = text;
+  
+  messageContainer.appendChild(messageDiv);
+  messageContainer.scrollTop = messageContainer.scrollHeight; 
+  
+  return messageId;
+}
 
