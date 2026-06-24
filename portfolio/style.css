@@ -130,7 +130,7 @@ img{ max-width:100%; display:block; }
   color: var(--ink);
   background: var(--grad-main);
   padding: 9px 18px;
-  border-radius: 100px;
+  border-radius: 10px;
 }
 
 .menu-btn{
