@@ -337,23 +337,43 @@
     </div>
   </section>
 
-
-
-<!-- Floating Chatbot -->
 <div class="chat-bubble" onclick="toggleChat()">
   <i class="fas fa-comment-dots"></i>
 </div>
 
 <div class="chat-container" id="chatBox">
-<div class="chat-header">
-  <i class="fas fa-robot"></i> My Bot
-</div>
+  <div class="chat-header">
+    <div class="header-info">
+      <div class="bot-avatar-header">
+        <i class="fas fa-robot"></i>
+      </div>
+      <div class="header-text">
+        <h3>Ask ME <i class="fas fa-sparkles" style="font-size: 12px; color: #fff;"></i></h3>
+        <p>Personal AI assistant For WAHID</p>
+      </div>
+    </div>
+    <button class="close-btn" onclick="toggleChat()"><i class="fas fa-times"></i></button>
+  </div>
 
-  <div class="chat-messages" id="messages"></div>
+  <div class="chat-messages" id="messages">
+    <div class="message-wrapper bot">
+      <div class="bot-avatar-msg"><i class="fas fa-robot"></i></div>
+      <div class="message bot-message">
+        👋 Hi! I'm <strong>Kitty</strong>, Wahid's AI assistant. Ask me anything about his skills, projects, or experience!
+      </div>
+    </div>
+  </div>
 
-  <div class="chat-input">
-    <input id="userInput" type="text" placeholder="Type a message..." />
-    <button onclick="sendMsg()">Send</button>
+  <div class="chat-footer-area">
+    <div class="chat-input-wrapper">
+      <input id="userInput" type="text" placeholder="Ask about skills, projects..." onkeypress="handleKeyPress(event)" />
+      <button class="send-btn" onclick="sendMsg()">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+    <div class="powered-by">
+      Powered by AI • Answers based on Wahid's portfolio
+    </div>
   </div>
 </div>
 
